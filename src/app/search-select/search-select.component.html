@@ -1,1 +1,6 @@
-<p>search-select works!</p>
+<mat-select placeholder="Select price" [(ngModel)]="selectedValue" name="item">
+  <input [(ngModel)]="searchTxt" matInput placeholder="search">
+  <mat-option *ngFor="let item of items | search : searchTxt" [value]="item.value" (onSelectionChange)="value()">
+        {{item.viewValue}}
+  </mat-option>
+</mat-select>
